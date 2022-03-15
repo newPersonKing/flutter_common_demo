@@ -4,6 +4,7 @@ import 'package:flutter_common_demo/render_object_widget/render_object_widget_co
 import 'package:flutter_common_demo/statusbar/status_bar_page.dart';
 
 import 'constraints/constraints_page.dart';
+import 'cus_widget/custom_widget_home.dart';
 import 'image/img_common.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
 
@@ -84,6 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
           commonItem("listView",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return ListViewHomePage();
+            }));
+          }),
+          commonItem("自定义相关",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return CustomWidgetHome();
             }));
           }),
         ],
