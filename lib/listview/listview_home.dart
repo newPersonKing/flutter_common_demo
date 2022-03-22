@@ -8,6 +8,8 @@ import 'package:flutter_common_demo/listview/refresh/refresh_demopage3.dart';
 import 'package:flutter_common_demo/listview/visibility_detector/listview_visibility_detector.dart';
 
 import '../main.dart';
+import 'chat_list/chat_list_scroll_page.dart';
+import 'chat_list/chat_list_scroll_page_2.dart';
 import 'listview_first_visible_item.dart';
 
 class ListViewHomePage extends StatelessWidget {
@@ -45,6 +47,16 @@ class ListViewHomePage extends StatelessWidget {
            commonItem("refresh3",(){
              Navigator.push(context, MaterialPageRoute(builder: (context){
                return  RefreshDemoPage3();
+             }));
+           }),
+           commonItem("chatList 聊天对话框",(){
+             Navigator.push(context, MaterialPageRoute(builder: (context){
+               return  const ChatListScrollDemoPage();
+             }));
+           }),
+           commonItem("chatList 聊天对话框2",(){
+             Navigator.push(context, MaterialPageRoute(builder: (context){
+               return  const ChatListScrollDemoPage2();
              }));
            }),
          ],
