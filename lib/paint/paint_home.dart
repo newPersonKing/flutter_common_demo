@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common_demo/paint/paper.dart';
 import 'package:flutter_common_demo/paint/paper_paint_page.dart';
+import 'package:flutter_common_demo/paint/wrapper/paint_bg_image.dart';
 import 'package:flutter_common_demo/paint/wrapper/tool_tip_page.dart';
 
 import '../main.dart';
@@ -23,6 +24,11 @@ class PaintHomePage extends StatelessWidget {
             commonItem("简单绘制",(){
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return  ToolTipPage();
+              }));
+            }),
+            commonItem("绘制大图部分内容",(){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return PaintBgPage();
               }));
             }),
           ],

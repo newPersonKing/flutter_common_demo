@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_common_demo/TestPage.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
 import 'package:flutter_common_demo/paint/paint_home.dart';
 import 'package:flutter_common_demo/render_object_widget/render_object_widget_common.dart';
@@ -108,6 +109,11 @@ class _MyHomePageState extends State<MyHomePage> {
           commonItem("painter",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return  PaintHomePage();
+            }));
+          }),
+          commonItem("测试",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return  TestPage();
             }));
           }),
         ],
