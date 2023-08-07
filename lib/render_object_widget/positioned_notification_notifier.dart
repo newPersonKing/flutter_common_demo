@@ -32,7 +32,7 @@ class _PositionedCallback extends RenderProxyBox {
   void performLayout() {
     super.performLayout();
 
-    SchedulerBinding.instance?.addPostFrameCallback((time) { //第三处
+    SchedulerBinding.instance.addPostFrameCallback((time) { //第三处
       tmp = localToGlobal(Offset.zero);
       onLayoutChangedCallback(tmp);//第二处
     });

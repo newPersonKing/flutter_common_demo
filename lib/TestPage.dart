@@ -1,4 +1,7 @@
 
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 
 class TestPage extends StatefulWidget {
@@ -9,42 +12,32 @@ class TestPage extends StatefulWidget {
 }
 
 class TestPageState extends State<TestPage>{
-  var texts = [1,2];
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
-      child: GestureDetector(
-        onTap: (){
-          texts.add(1);
-          setState(() {
-
-          });
-        },
-        child: Container(
-          height: 300,
-          width: double.infinity,
-          color: Colors.yellow,
-          child: Row(
-            children: [
-              Expanded(child: Center(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: texts.map((e) => Container(
-                      width: 100,
-                      height: 100,
-                      margin: EdgeInsets.only(left: 10),
-                      color: Colors.grey,
-                    )).toList(),
-                  ),
+      color: Colors.yellow,
+      child: Center(
+        child: GestureDetector(
+          onTap: (){
+            print("out_click");
+          },
+          child: Container(
+            height: 300,
+            width: double.infinity,
+            color: Colors.grey,
+            child: GestureDetector(
+              onTap: (){
+                print("inner_click");
+              },
+              child: Center(
+                child: Container(
+                  color: Colors.green,
+                  width: 100,
+                  height: 100,
                 ),
-              ))
-
-
-            ],
+              ),
+            ),
           ),
         ),
       ),
@@ -52,3 +45,30 @@ class TestPageState extends State<TestPage>{
   }
 
 }
+
+void main(){
+ runApp(TestPage());
+}
+
+class CD extends State<StatefulWidget> with RestorationMixin {
+  @override
+  Widget build(BuildContext context) {
+    return Text("${_counter.value}");
+  }
+
+  final RestorableInt _counter = RestorableInt(0);
+  
+  @override
+  String? get restorationId => "restorationId";
+
+  @override
+  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
+    registerForRestoration(_counter, "count");
+  }
+
+}
+
+
+
+
+
