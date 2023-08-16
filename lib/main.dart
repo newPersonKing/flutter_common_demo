@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common_demo/TestPage.dart';
 import 'package:flutter_common_demo/back_drop_filter/back_drop_filter_page.dart';
+import 'package:flutter_common_demo/demo/page_storage_demo.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
 import 'package:flutter_common_demo/out_click/out_click_test_page.dart';
 import 'package:flutter_common_demo/paint/paint_home.dart';
@@ -21,6 +22,10 @@ import 'build_widget/BuilderWidgetPage.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/custom_widget_home.dart';
 import 'cus_widget/sliding_up_panel/sliding_panel_demo.dart';
+import 'demo/fitted_box_demo.dart';
+import 'demo/over_flow_bar_demo.dart';
+import 'demo/over_flow_box_demo.dart';
+import 'demo/paginated_data_table_demo.dart';
 import 'drag_float/drag_float_page.dart';
 import 'image/img_common.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
@@ -74,6 +79,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: ListView(
         children: [
+          commonItem("PaginatedDataTableDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return PaginatedDataTableDemo();
+            }));
+          }),
+          commonItem("PageStorageDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return PageStorageDemo();
+            }));
+          }),
+          commonItem("FittedoxDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return FittedBoxDemo();
+            }));
+          }),
+          commonItem("OverflowBoxDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return OverflowBoxDemo();
+            }));
+          }),
+          commonItem("OverflowBarDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return OverflowBarDemo();
+            }));
+          }),
           commonItem("sliding_panel",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return SlidingPanelDemo();
