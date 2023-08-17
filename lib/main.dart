@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_common_demo/TestPage.dart';
 import 'package:flutter_common_demo/back_drop_filter/back_drop_filter_page.dart';
 import 'package:flutter_common_demo/demo/page_storage_demo.dart';
+import 'package:flutter_common_demo/demo/text_shadow_demo.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
 import 'package:flutter_common_demo/out_click/out_click_test_page.dart';
 import 'package:flutter_common_demo/paint/paint_home.dart';
-import 'package:flutter_common_demo/pay_web/cotti_pay_web_view.dart';
-import 'package:flutter_common_demo/pro/register.dart';
 import 'package:flutter_common_demo/render_object_widget/render_object_widget_common.dart';
 import 'package:flutter_common_demo/select/drop_down_select.dart';
 import 'package:flutter_common_demo/slivers/sliverAnimatedList_page.dart';
@@ -22,6 +20,7 @@ import 'build_widget/BuilderWidgetPage.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/custom_widget_home.dart';
 import 'cus_widget/sliding_up_panel/sliding_panel_demo.dart';
+import 'demo/elevated_button_demo.dart';
 import 'demo/fitted_box_demo.dart';
 import 'demo/over_flow_bar_demo.dart';
 import 'demo/over_flow_box_demo.dart';
@@ -79,6 +78,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: ListView(
         children: [
+          commonItem("ElevatedButtonDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return ElevatedButtonDemo();
+            }));
+          }),
+          commonItem("TextShadowDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return TextShadowDemo();
+            }));
+          }),
           commonItem("PaginatedDataTableDemo",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return PaginatedDataTableDemo();
@@ -207,11 +216,6 @@ class _MyHomePageState extends State<MyHomePage> {
           commonItem("测试",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return  BlocExamplePage();
-            }));
-          }),
-          commonItem("潇潇",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  RegisterPage();
             }));
           }),
           commonItem("点击展示",(){
