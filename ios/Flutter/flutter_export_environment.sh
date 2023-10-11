@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/gy/flutter_macos_arm64_3.7.12-stable"
+export "FLUTTER_ROOT=/Users/gy/flutter_macos_arm64_3.10.6-stable"
 export "FLUTTER_APPLICATION_PATH=/Users/gy/Desktop/github/flutter_common_demo"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"

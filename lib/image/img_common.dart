@@ -26,6 +26,7 @@ class ImageCommonPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15,),
+              
               /*设置圆角*/
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),

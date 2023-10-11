@@ -9,7 +9,7 @@ class OutClickTestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
+    // groupId 的作用是把多个区域合并到一起
     return Material(
       color: Colors.yellow,
       child: Stack(

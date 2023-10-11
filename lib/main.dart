@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common_demo/back_drop_filter/back_drop_filter_page.dart';
+import 'package:flutter_common_demo/demo/hit_test_behavior_demo.dart';
 import 'package:flutter_common_demo/demo/page_storage_demo.dart';
 import 'package:flutter_common_demo/demo/text_shadow_demo.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
@@ -15,8 +16,10 @@ import 'package:flutter_common_demo/test_composited/test_composited_page.dart';
 import 'package:flutter_common_demo/text/text_count_compute_page.dart';
 import 'package:flutter_common_demo/widget_show/widget_show_page.dart';
 
+import 'AnimTestPage.dart';
 import 'bloc_example.dart';
 import 'build_widget/BuilderWidgetPage.dart';
+import 'check/people_check.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/custom_widget_home.dart';
 import 'cus_widget/sliding_up_panel/sliding_panel_demo.dart';
@@ -69,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -78,6 +82,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: ListView(
         children: [
+          commonItem("人机验证",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const PeopleCheckPage();
+            }));
+          }),
+          commonItem("HitTestBehaviorDemo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const HitTestBehaviorDemo();
+            }));
+          }),
           commonItem("ElevatedButtonDemo",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return ElevatedButtonDemo();
