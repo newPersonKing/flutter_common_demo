@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_common_demo/network/print.dart';
 import 'dart:math' as math;
+
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 ///聊天列表，添加旧数据和新数据的时候不会导致列表跳动，首尾添加数据不会抖动
 class ChatListScrollDemoPage2 extends StatefulWidget {
@@ -66,7 +69,7 @@ class _ChatListScrollDemoPageState2 extends State<ChatListScrollDemoPage2> {
               type: "Right"));
           setState(() {});
           Future.delayed(const Duration(milliseconds: 1000), () {
-            scroller.jumpTo(scroller.position.maxScrollExtent);
+            // scroller.jumpTo(scroller.position.maxScrollExtent);
           });
         },
         child: const Text(
@@ -198,6 +201,7 @@ class _ChatListScrollDemoPageState2 extends State<ChatListScrollDemoPage2> {
       extendBody: true,
       body: NotificationListener(
         onNotification: (notification) {
+          printMsg("notification===");
           if (notification is ScrollNotification) {
             if (notification.metrics is PageMetrics) {
               return false;
@@ -208,12 +212,19 @@ class _ChatListScrollDemoPageState2 extends State<ChatListScrollDemoPage2> {
                 return false;
               }
             }
+            // 有centerKey的情况下 向上滑动 这个值为 0
+            // pixels为负数
+            //todo 是否可以通过 notification.metrics.maxScrollExtent 来判断是否内容满一屏幕
+            printMsg("notification11===${ notification.metrics.maxScrollExtent}");
+            //notification.metrics.pixels 已经滑动的距离
+            printMsg("notification22===${ notification.metrics.pixels}");
             extentAfter = notification.metrics.extentAfter;
           }
           return false;
         },
         child: CustomScrollView(
           controller: scroller,
+          physics: AlwaysScrollableScrollPhysics(),
           center: centerKey,
           slivers: [
             SliverList(

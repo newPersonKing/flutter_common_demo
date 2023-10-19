@@ -119,8 +119,9 @@ class _ChatListScrollDemoPageState extends State<ChatListScrollDemoPage> {
                 var item = newData[index];
                 if (item.type == "Right") {
                   return renderRightItem(item);
-                } else
+                } else {
                   return renderLeftItem(item);
+                }
               },
               childCount: newData.length,
             ),

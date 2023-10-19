@@ -28,7 +28,7 @@ class DropDownSelectWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return ExpansionTileCard<ItemEntity>(
+    return SafeArea(child: ExpansionTileCard<ItemEntity>(
       data: items,
       buildItem: (e,selected){
         return Padding(
@@ -51,16 +51,16 @@ class DropDownSelectWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(e.icon,width: 20,height: 20),
-              SizedBox(width: 3,),
+              const SizedBox(width: 3,),
               Text(e.title,style: TextStyle(
                   fontSize: 15,
                   color: Colors.black.withAlpha(85)
               ),),
-              SizedBox(width: 3,),
+              const SizedBox(width: 3,),
               isOpen ? Image.asset(DropDownSelectWidget.imagesIconArrowDown,width: 33,height: 29,):Image.asset(DropDownSelectWidget.imagesIconArrowDown,width: 33,height: 29,)
             ],
           ),);
-      },);
+      },));
   }
 }
 

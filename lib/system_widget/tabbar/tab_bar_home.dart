@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_common_demo/tabbar/underline_tab_indicator_impl.dart';
+import 'package:flutter_common_demo/system_widget/tabbar/underline_tab_indicator_impl.dart';
 
 class TabBarPage extends StatefulWidget {
   TabBarPage({Key? key}) : super(key: key);

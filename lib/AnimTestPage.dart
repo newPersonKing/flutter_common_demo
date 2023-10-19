@@ -20,14 +20,14 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   void initState() {
     super.initState();
     controller = AnimationController(vsync: this);
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      controller.forward();
-    });
-    controller.addListener(() {
-      setState(() {
-
-      });
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    //   controller.forward();
+    // });
+    // controller.addListener(() {
+    //   setState(() {
+    //
+    //   });
+    // });
   }
 
   @override
@@ -35,12 +35,21 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
 
     return Material(
       color: Colors.white,
-      child: Container(
-        width: controller.value * 100,
-        height: controller.value * 100,
-        child: Image.asset(Assets.imagesBg),
+      child: Column(
+        children: [
+          Expanded(child: Container(
+            alignment: Alignment.topCenter,
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemBuilder: (context,index){
+                  return Container(height: 100,width: double.infinity,color: Colors.green,child: Text("$index"),);
+                },
+                reverse: true,
+                itemCount: 3),
+          )),
+          Container(height: 100,width: double.infinity,color: Colors.yellow,)
+        ],
       ),
     );
   }
-
 }

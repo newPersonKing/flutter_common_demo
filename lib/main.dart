@@ -1,35 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_common_demo/back_drop_filter/back_drop_filter_page.dart';
-import 'package:flutter_common_demo/demo/hit_test_behavior_demo.dart';
-import 'package:flutter_common_demo/demo/page_storage_demo.dart';
-import 'package:flutter_common_demo/demo/text_shadow_demo.dart';
+import 'package:flutter_common_demo/bottom_app_bar_page.dart';
+import 'package:flutter_common_demo/gesture/gesture_home_page.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
-import 'package:flutter_common_demo/out_click/out_click_test_page.dart';
 import 'package:flutter_common_demo/paint/paint_home.dart';
-import 'package:flutter_common_demo/render_object_widget/render_object_widget_common.dart';
-import 'package:flutter_common_demo/select/drop_down_select.dart';
 import 'package:flutter_common_demo/slivers/sliverAnimatedList_page.dart';
 import 'package:flutter_common_demo/statusbar/status_bar_page.dart';
 import 'package:flutter_common_demo/system_api/system_ui.dart';
-import 'package:flutter_common_demo/tabbar/tab_bar_home.dart';
+import 'package:flutter_common_demo/system_widget/system_widget_home_page.dart';
 import 'package:flutter_common_demo/test_composited/test_composited_page.dart';
-import 'package:flutter_common_demo/text/text_count_compute_page.dart';
-import 'package:flutter_common_demo/widget_show/widget_show_page.dart';
-
-import 'AnimTestPage.dart';
-import 'bloc_example.dart';
+import 'package:flutter_common_demo/text/text_home_page.dart';
 import 'build_widget/BuilderWidgetPage.dart';
-import 'check/people_check.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/custom_widget_home.dart';
-import 'cus_widget/sliding_up_panel/sliding_panel_demo.dart';
-import 'demo/elevated_button_demo.dart';
-import 'demo/fitted_box_demo.dart';
-import 'demo/over_flow_bar_demo.dart';
-import 'demo/over_flow_box_demo.dart';
-import 'demo/paginated_data_table_demo.dart';
-import 'drag_float/drag_float_page.dart';
-import 'image/img_common.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
 
 void main() {
@@ -82,54 +64,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: ListView(
         children: [
-          commonItem("人机验证",(){
+          commonItem("手势相关",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const PeopleCheckPage();
+              return const GestureHomePage();
             }));
           }),
-          commonItem("HitTestBehaviorDemo",(){
+          commonItem("BottomAppBar 属性",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const HitTestBehaviorDemo();
+              return const BottomAppBarPage();
             }));
           }),
-          commonItem("ElevatedButtonDemo",(){
+          commonItem("TextView 相关",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
-              return ElevatedButtonDemo();
-            }));
-          }),
-          commonItem("TextShadowDemo",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return TextShadowDemo();
-            }));
-          }),
-          commonItem("PaginatedDataTableDemo",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return PaginatedDataTableDemo();
-            }));
-          }),
-          commonItem("PageStorageDemo",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return PageStorageDemo();
-            }));
-          }),
-          commonItem("FittedoxDemo",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return FittedBoxDemo();
-            }));
-          }),
-          commonItem("OverflowBoxDemo",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return OverflowBoxDemo();
-            }));
-          }),
-          commonItem("OverflowBarDemo",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return OverflowBarDemo();
-            }));
-          }),
-          commonItem("sliding_panel",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return SlidingPanelDemo();
+              return const TextHomePage();
             }));
           }),
           commonItem("状态栏相关",(){
@@ -137,19 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
               return StatusBarPage();
             }));
           }),
-          commonItem("imageView 相关",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const ImageCommonPage();
-            }));
-          }),
           commonItem("Navigator_Overlay 相关",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return const NavigatorOverlayCommonPage();
-            }));
-          }),
-          commonItem("自定义 RenderObject",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const RenderObjectWidgetCommonPage();
             }));
           }),
           commonItem("约束",(){
@@ -172,39 +109,19 @@ class _MyHomePageState extends State<MyHomePage> {
               return  SystemApiPage();
             }));
           }),
-          commonItem("tabBar",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  TabBarPage();
-            }));
-          }),
-          commonItem("painter",(){
+          commonItem("imageView / painter 相关",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return  PaintHomePage();
             }));
           }),
-          commonItem("官方组件",(){
+          commonItem("有特殊效果的官方组件",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  WidgetShowPage();
-            }));
-          }),
-          commonItem("TapRegion 响应点击组件外部",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  OutClickTestPage();
+              return  SystemWidgetHomePage();
             }));
           }),
           commonItem("测试 Widget联动",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return  TestCompositedPage();
-            }));
-          }),
-          commonItem("BackdropFilter 实现模糊",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  const BackdropFilterPage();
-            }));
-          }),
-          commonItem("可拖动悬浮按钮",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  const DragFloatPage();
             }));
           }),
           commonItem("SliverAnimatedList",(){
@@ -217,21 +134,11 @@ class _MyHomePageState extends State<MyHomePage> {
               return  const BuilderWidgetPage();
             }));
           }),
-          commonItem("下拉选择",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  DropDownSelectWidget();
-            }));
-          }),
-          commonItem("textPainter 计算文本行数",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  TextCountComputePage();
-            }));
-          }),
-          commonItem("测试",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  BlocExamplePage();
-            }));
-          }),
+          // commonItem("测试",(){
+          //   Navigator.push(context, MaterialPageRoute(builder: (context){
+          //     return  ChatListScrollDemoPage2();
+          //   }));
+          // }),
           commonItem("点击展示",(){
             showPay();
           }),

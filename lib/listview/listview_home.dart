@@ -10,6 +10,8 @@ import 'package:flutter_common_demo/listview/visibility_detector/listview_visibi
 import '../main.dart';
 import 'chat_list/chat_list_scroll_page.dart';
 import 'chat_list/chat_list_scroll_page_2.dart';
+import 'chat_list/chat_list_sroll_page_3.dart';
+import 'chat_list/chat_list_sroll_page_4.dart';
 import 'listview_first_visible_item.dart';
 
 class ListViewHomePage extends StatelessWidget {
@@ -57,6 +59,16 @@ class ListViewHomePage extends StatelessWidget {
            commonItem("chatList 聊天对话框2",(){
              Navigator.push(context, MaterialPageRoute(builder: (context){
                return  const ChatListScrollDemoPage2();
+             }));
+           }),
+           commonItem("ListView reserve 为true",(){
+             Navigator.push(context, MaterialPageRoute(builder: (context){
+               return  const ChatListViewPage3();
+             }));
+           }),
+           commonItem("ListView 头部插入数据 不跳转",(){
+             Navigator.push(context, MaterialPageRoute(builder: (context){
+               return  const ChatListViewPage4();
              }));
            }),
          ],
