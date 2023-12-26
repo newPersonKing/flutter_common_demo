@@ -15,7 +15,7 @@ extension StackExt on Stack{
   static Widget createBlurView({
     required Widget child,
     required double? blur,
-    BorderRadius? borderRadius = BorderRadius.zero,
+    BorderRadius borderRadius = BorderRadius.zero,
     CustomClipper<RRect>? clipper,
     Clip clipBehavior = Clip.antiAlias,
     TileMode tileMode = TileMode.clamp

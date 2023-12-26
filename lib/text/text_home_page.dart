@@ -34,6 +34,27 @@ class TextHomePage extends StatelessWidget {
                return const TextShadowDemo();
              }));
            }),
+           Container(
+             alignment: Alignment.center,
+             margin: const EdgeInsets.symmetric(horizontal: 15),
+             color: Colors.blue,
+             width: double.infinity,
+             height: 50,
+             child: ShaderMask(
+               shaderCallback: (rect) {
+                 return const LinearGradient(
+                   begin: Alignment.centerLeft,
+                   end: Alignment.centerRight,
+                   colors: [Color(0xFFFFF9EB),Colors.green],
+                 ).createShader(rect);
+               },
+               child: const Text(
+                 "文本渐变色",
+                 style: TextStyle(
+                     color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+               ),
+             ),
+           ),
          ],
         ),
       ),

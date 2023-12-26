@@ -23,11 +23,6 @@ class SystemWidgetHomePage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
          children: [
-           commonItem("BackdropFilter 实现模糊",(){
-             Navigator.push(context, MaterialPageRoute(builder: (context){
-               return  const BackdropFilterPage();
-             }));
-           }),
            commonItem("tabBar",(){
              Navigator.push(context, MaterialPageRoute(builder: (context){
                return  TabBarPage();

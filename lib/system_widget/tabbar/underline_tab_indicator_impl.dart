@@ -10,6 +10,7 @@ class UnderlineTabIndicatorImpl extends Decoration {
   const UnderlineTabIndicatorImpl({
     this.borderSide =  const BorderSide(width: 2.0, color: Colors.white),
     this.insets = EdgeInsets.zero,
+    this.width
   });
 
   /// The color and weight of the horizontal line drawn below the selected tab.
@@ -22,6 +23,8 @@ class UnderlineTabIndicatorImpl extends Decoration {
   /// [TabBarIndicatorSize.label], or the entire tab with
   /// [TabBarIndicatorSize.tab].
   final EdgeInsetsGeometry insets;
+
+  final double? width;
 
   @override
   Decoration? lerpFrom(Decoration? a, double t) {
@@ -53,7 +56,16 @@ class UnderlineTabIndicatorImpl extends Decoration {
   Rect _indicatorRectFor(Rect rect, TextDirection textDirection) {
     assert(rect != null);
     assert(textDirection != null);
+
     final Rect indicator = insets.resolve(textDirection).deflateRect(rect);
+    if(width !=null){
+      return Rect.fromLTWH(
+        indicator.left + (indicator.width / 2 - width! / 2),
+        indicator.bottom - borderSide.width,
+        width!,
+        borderSide.width,
+      );
+    }
     return Rect.fromLTWH(
       indicator.left,
       indicator.bottom - borderSide.width,

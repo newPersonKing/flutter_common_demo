@@ -2,10 +2,28 @@
 class Assets {
   Assets._();
 
+  static const String assetsMds = 'assets/mds.jpg';
+  static const String assetsXyx = 'assets/xyx.webp';
+  static const String fashionFashion0 = 'assets/fashion/fashion_0.jpg';
+  static const String fashionFashion1 = 'assets/fashion/fashion_1.jpg';
+  static const String fashionFashion2 = 'assets/fashion/fashion_2.jpg';
+  static const String fashionFashion3 = 'assets/fashion/fashion_3.jpg';
+  static const String fashionFashion4 = 'assets/fashion/fashion_4.jpg';
+  static const String fashionFashion5 = 'assets/fashion/fashion_5.jpg';
+  static const String fashionFashion6 = 'assets/fashion/fashion_6.jpg';
+  static const String fashionFashion7 = 'assets/fashion/fashion_7.jpg';
+  static const String fashionFashion8 = 'assets/fashion/fashion_8.jpg';
   static const String imagesBg = 'assets/images/bg.jpeg';
   static const String imagesBgLoginHeader = 'assets/images/bg_login_header.png';
+  static const String imagesConcave = 'assets/images/concave.png';
+  static const String imagesConvex = 'assets/images/convex.png';
+  static const String imagesCreditCardChip = 'assets/images/credit_card_chip.png';
   static const String imagesDst = 'assets/images/dst.png';
+  static const String imagesFlat = 'assets/images/flat.png';
   static const String imagesFlutter = 'assets/images/flutter.png';
+  static const String imagesFuckPutin = 'assets/images/fuck_putin.png';
+  static const String imagesHome1 = 'assets/images/home_1.png';
+  static const String imagesHome2 = 'assets/images/home_2.png';
   static const String imagesIcon360 = 'assets/images/icon_360.png';
   static const String imagesIconArrowDown = 'assets/images/icon_arrow_down.png';
   static const String imagesIconBack = 'assets/images/icon_back.png';
@@ -40,12 +58,17 @@ class Assets {
   static const String imagesIconTuchong = 'assets/images/icon_tuchong.png';
   static const String imagesIconUserDefault = 'assets/images/icon_user_default.png';
   static const String imagesIconWeiruan = 'assets/images/icon_weiruan.png';
+  static const String imagesMap = 'assets/images/map.jpg';
+  static const String imagesPinBall256x = 'assets/images/pin_ball_256x.png';
   static const String imagesRain = 'assets/images/rain.png';
   static const String imagesRegisterPerson = 'assets/images/register_person.png';
   static const String imagesRightChat = 'assets/images/right_chat.png';
   static const String imagesShoot = 'assets/images/shoot.png';
   static const String imagesSrc = 'assets/images/src.png';
   static const String imagesSword = 'assets/images/sword.png';
+  static const String imagesTesla = 'assets/images/tesla.png';
+  static const String imagesTeslaCropped = 'assets/images/tesla_cropped.png';
+  static const String imagesWeeknd = 'assets/images/weeknd.jpg';
   static const String imagesWy200x300 = 'assets/images/wy_200x300.jpg';
   static const String imagesWy300x200 = 'assets/images/wy_300x200.jpg';
   static const String imgTest = 'img/test.jpeg';

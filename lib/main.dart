@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common_demo/bottom_app_bar_page.dart';
+import 'package:flutter_common_demo/box_decoration/cus/cus_decoration_home_page.dart';
+import 'package:flutter_common_demo/box_decoration/decoration_home_page.dart';
+import 'package:flutter_common_demo/box_decoration/src/theme/theme.dart';
+import 'package:flutter_common_demo/dismissible_page/demo/demo.dart';
 import 'package:flutter_common_demo/gesture/gesture_home_page.dart';
+import 'package:flutter_common_demo/guide/guide_home_page.dart';
+import 'package:flutter_common_demo/hyper_effects/hyper_effects_demo_page.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
+import 'package:flutter_common_demo/page_route_builder/page_route_builder_home_page.dart';
 import 'package:flutter_common_demo/paint/paint_home.dart';
 import 'package:flutter_common_demo/slivers/sliverAnimatedList_page.dart';
 import 'package:flutter_common_demo/statusbar/status_bar_page.dart';
@@ -9,12 +16,22 @@ import 'package:flutter_common_demo/system_api/system_ui.dart';
 import 'package:flutter_common_demo/system_widget/system_widget_home_page.dart';
 import 'package:flutter_common_demo/test_composited/test_composited_page.dart';
 import 'package:flutter_common_demo/text/text_home_page.dart';
+import 'package:flutter_common_demo/text_anim/text_anim_home.dart';
+import 'package:flutter_common_demo/textfield/TextFieldHomePage.dart';
+import 'package:flutter_common_demo/validator/validator_home_page.dart';
+import 'FractionalTranslationPage.dart';
+import 'box_decoration/src/app.dart';
 import 'build_widget/BuilderWidgetPage.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/custom_widget_home.dart';
+import 'decoration_blendmode/DecorationBlendModelPage.dart';
+import 'guide/guide_1/sample/sample.dart';
+import 'guide/guide_2/sample/guide_2_sample.dart';
+import 'location/geolocator/geolocator_demo_page.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
 
-void main() {
+
+void main() async{
   runApp(const MyApp());
 }
 
@@ -62,8 +79,97 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: const Color(0xFFEA3B5C),
       body: ListView(
         children: [
+
+          commonItem("Decoration BlendMode",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const DecorationBlendModelPage();
+            }));
+          }),
+
+          commonItem("CusDecoration Examples",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const CusDecorationHomePage();
+            }));
+          }),
+
+          commonItem("Guide Demo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const GuideDemoPage();
+            }));
+          }),
+
+
+          commonItem("Decoration Examples",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const NeumorphicApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Flutter Demo',
+                themeMode: ThemeMode.light,
+                theme: NeumorphicThemeData(
+                  baseColor: Color(0xFFFFFFFF),
+                  lightSource: LightSource.topLeft,
+                  depth: 10,
+                ),
+                darkTheme: NeumorphicThemeData(
+                  baseColor: Color(0xFF3E3E3E),
+                  lightSource: LightSource.topLeft,
+                  depth: 6,
+                ),
+                home: DecorationHomePage(),
+              );;
+            }));
+          }),
+
+
+          commonItem("Dismissible Examples",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const AppView();
+            }));
+          }),
+
+          commonItem("文字动画",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const TextAnimHomePage();
+            }));
+          }),
+
+          commonItem("转场动画",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const PageRouteBuilderHomePage();
+            }));
+          }),
+
+          commonItem("hyper effects demo",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const HyperEffectsDemoPage();
+            }));
+          }),
+
+          commonItem("正则校验",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const ValidatorHomePage();
+            }));
+          }),
+
+          commonItem("FractionalTranslation 使用",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const FractionalTranslationPage();
+            }));
+          }),
+
+          commonItem("TextField() 测试",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const TextFieldHomePage();
+            }));
+          }),
+          commonItem("geolocator 测试",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const GeolocatorWidget();
+            }));
+          }),
           commonItem("手势相关",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return const GestureHomePage();
@@ -202,7 +308,7 @@ Widget commonItem(String content,VoidCallback clickBack){
           color: Colors.orange,
           shape: BoxShape.rectangle,
           border: Border.all(),
-          borderRadius: BorderRadius.all(Radius.circular(10))
+          borderRadius: const BorderRadius.all(Radius.circular(10))
       ),
       width: double.infinity,
       height: 50,

@@ -20,25 +20,26 @@ class _TabBarPageState extends State<TabBarPage>
     return TabBar(
         labelPadding: EdgeInsets.zero,
         indicator: const UnderlineTabIndicatorImpl(
-            borderSide: BorderSide(width: 2.0, color: Colors.blue),
-            insets: EdgeInsets.only(left: 20,right:20,)),
+            borderSide: BorderSide(width: 4.0, color: Colors.blue),
+            insets: EdgeInsets.only(left: 20,right:20),
+            width: 20
+        ),
         indicatorColor: Colors.green,
         controller: tabController,
         isScrollable: true,
         tabs: tabs
             .map((e) => Container(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  width: 40,
-                  alignment: Alignment.center,
-                  child: Text(
-                    e,
-                    style: const TextStyle(color: Colors.black, fontSize: 20),
-                  ),
-                ))
+          padding: const EdgeInsets.only(left: 20,right: 20),
+          alignment: Alignment.center,
+          child: Text(
+            e,
+            style: const TextStyle(color: Colors.black, fontSize: 20),
+          ),
+        ))
             .toList());
   }
 
-  var tabs = ["标签","标签","1标签","标签","标签","标签","标签","标签","标签","标签",];
+  var tabs = ["标签","标签","标签","标签","标签","标签","标签","标签","标签","标签",];
   @override
   void initState() {
     super.initState();
