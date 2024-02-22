@@ -1,6 +1,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_common_demo/image/d3/d3_demo.dart';
+
+import '../guide/guide_home_page.dart';
+import '../main.dart';
 
 class ImageCommonPage extends StatelessWidget {
 
@@ -14,6 +18,13 @@ class ImageCommonPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+
+              commonItem("Image D3",(){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return const D3DemoPage(title: "D#3 Car");
+                }));
+              }),
+
               /*设置圆角*/
               Container(
                 width: 300,
@@ -26,7 +37,7 @@ class ImageCommonPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15,),
-              
+
               /*设置圆角*/
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
@@ -84,7 +95,7 @@ class ImageCommonPage extends StatelessWidget {
                   height: 120,
                   decoration: const ShapeDecoration(
                       shape: StadiumBorder(
-                        side: BorderSide(color: Colors.amberAccent)
+                          side: BorderSide(color: Colors.amberAccent)
                       ),
                       image: DecorationImage(
                           fit: BoxFit.cover,
@@ -98,7 +109,7 @@ class ImageCommonPage extends StatelessWidget {
                   height: 120,
                   decoration: const ShapeDecoration(
                       shape: CircleBorder(
-                        side: BorderSide(color: Colors.blueAccent)
+                          side: BorderSide(color: Colors.blueAccent)
                       ),
                       image: DecorationImage(
                           fit: BoxFit.cover,

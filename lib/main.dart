@@ -19,14 +19,15 @@ import 'package:flutter_common_demo/text/text_home_page.dart';
 import 'package:flutter_common_demo/text_anim/text_anim_home.dart';
 import 'package:flutter_common_demo/textfield/TextFieldHomePage.dart';
 import 'package:flutter_common_demo/validator/validator_home_page.dart';
+import 'package:flutter_common_demo/withdrawGoldPage.dart';
 import 'FractionalTranslationPage.dart';
+import 'TestPage.dart';
 import 'box_decoration/src/app.dart';
 import 'build_widget/BuilderWidgetPage.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/custom_widget_home.dart';
 import 'decoration_blendmode/DecorationBlendModelPage.dart';
-import 'guide/guide_1/sample/sample.dart';
-import 'guide/guide_2/sample/guide_2_sample.dart';
+import 'glsl/glsl_main_page.dart';
 import 'location/geolocator/geolocator_demo_page.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
 
@@ -82,6 +83,37 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: const Color(0xFFEA3B5C),
       body: ListView(
         children: [
+
+          Center(
+            child: Container(
+              color: Colors.yellow,
+              child: MaterialButton(
+                onPressed: () {
+
+                },
+                child: Text("12312"),
+                padding: EdgeInsets.all(50),
+                materialTapTargetSize: MaterialTapTargetSize.padded,
+                // padding: EdgeInsets.all(50),
+              ),
+            ),
+          ),
+          commonItem("GLSL 学习",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const GLSLMainPage();
+            }));
+          }),
+
+          commonItem("imageView / painter 相关",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return  PaintHomePage();
+            }));
+          }),
+          commonItem("test",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const TestPage();
+            }));
+          }),
 
           commonItem("Decoration BlendMode",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -215,11 +247,6 @@ class _MyHomePageState extends State<MyHomePage> {
               return  SystemApiPage();
             }));
           }),
-          commonItem("imageView / painter 相关",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return  PaintHomePage();
-            }));
-          }),
           commonItem("有特殊效果的官方组件",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return  SystemWidgetHomePage();
@@ -246,7 +273,10 @@ class _MyHomePageState extends State<MyHomePage> {
           //   }));
           // }),
           commonItem("点击展示",(){
-            showPay();
+            // showPay();
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return  const WithdrawGoldPage();
+            }));
           }),
         ],
       ),
@@ -317,3 +347,4 @@ Widget commonItem(String content,VoidCallback clickBack){
     ),
   );
 }
+

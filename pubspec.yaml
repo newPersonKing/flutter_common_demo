@@ -71,13 +71,24 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  shaders:
+    - shaders/color.frag
+    - shaders/four_shader_color.frag
+    - shaders/pincushion.glsl
+    - shaders/fence.glsl
+    - shaders/magic_color.glsl
+    - shaders/magic_test.glsl
+    - shaders/circle_and_circle.glsl
+    - shaders/colour.glsl
+    - shaders/fractal_pyramid.glsl
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - img/
-    - assets/images/
     - assets/
+    - assets/images/
     - assets/fashion/
+    - assets/sample/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

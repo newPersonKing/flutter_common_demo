@@ -1,10 +1,9 @@
 
-import 'dart:convert';
-
-import 'package:crypto/crypto.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class TestPage extends StatefulWidget {
+  final String a= "";
   const TestPage({Key? key}) : super(key: key);
 
   @override
@@ -13,33 +12,42 @@ class TestPage extends StatefulWidget {
 
 class TestPageState extends State<TestPage>{
 
+  List<InlineSpan> spnas = [];
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 5), () {
+      debugPrint("======13132");
+      setState(() {
+        // spnas = [];
+        spnas.add(TextSpan(text: "1",style: TextStyle(
+            fontSize: 20,
+            color: Colors.green
+        )));
+        spnas.add(TextSpan(text: "2",style: TextStyle(
+            fontSize: 20,
+            color: Colors.green
+        )));
+      });
+    });
+    spnas.add(TextSpan(text: "1",style: TextStyle(
+        fontSize: 20,
+        color: Colors.green
+    )));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.yellow,
-      child: Center(
-        child: GestureDetector(
-          onTap: (){
-            print("out_click");
-          },
-          child: Container(
-            height: 300,
-            width: double.infinity,
-            color: Colors.grey,
-            child: GestureDetector(
-              onTap: (){
-                print("inner_click");
-              },
-              child: Center(
-                child: Container(
-                  color: Colors.green,
-                  width: 100,
-                  height: 100,
-                ),
-              ),
-            ),
+      child: Column(
+        children: [
+          Container(
+            height: 100,
+            color: Colors.red,
           ),
-        ),
+          spnas.isNotEmpty ? RichText(text: TextSpan(children: spnas)):SizedBox()
+        ],
       ),
     );
   }
@@ -47,7 +55,7 @@ class TestPageState extends State<TestPage>{
 }
 
 void main(){
- runApp(TestPage());
+  runApp(TestPage());
 }
 
 class CD extends State<StatefulWidget> with RestorationMixin {
@@ -57,7 +65,7 @@ class CD extends State<StatefulWidget> with RestorationMixin {
   }
 
   final RestorableInt _counter = RestorableInt(0);
-  
+
   @override
   String? get restorationId => "restorationId";
 
