@@ -81,6 +81,8 @@ flutter:
     - shaders/circle_and_circle.glsl
     - shaders/colour.glsl
     - shaders/fractal_pyramid.glsl
+    - shaders/seascape.glsl
+    - shaders/octagrams.glsl
 
   # To add assets to your application, add an assets section, like this:
   assets:

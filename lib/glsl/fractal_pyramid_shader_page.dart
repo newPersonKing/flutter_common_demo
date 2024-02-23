@@ -38,7 +38,7 @@ class _FractalPyramidShaderPageState extends State<FractalPyramidShaderPage>  {
   }
 
   void _loadShader() async {
-    String path = 'shaders/magic_test.glsl';
+    String path = 'shaders/fractal_pyramid.glsl';
     FragmentProgram program = await FragmentProgram.fromAsset(path);
     shader = program.fragmentShader();
     setState(() {

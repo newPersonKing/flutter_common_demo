@@ -9,7 +9,10 @@ import 'package:flutter_common_demo/glsl/fence_shader_demo.dart';
 import 'package:flutter_common_demo/glsl/fractal_pyramid_shader_page.dart';
 import 'package:flutter_common_demo/glsl/magic_color_page.dart';
 import 'package:flutter_common_demo/glsl/pincus_shader_demo.dart';
+import 'package:flutter_common_demo/glsl/seascape_shader_page.dart';
 import 'package:flutter_common_demo/main.dart';
+
+import 'octagrams_shader_page.dart';
 
 class GLSLMainPage extends StatefulWidget {
   const GLSLMainPage({super.key});
@@ -26,6 +29,16 @@ class _GLSLMainPageState extends State<GLSLMainPage>{
       child: SingleChildScrollView(
         child: Column(
           children: [
+            commonItem("Octagrams  八角形", () {
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return const OctagramsShaderPage();
+              }));
+            }),
+            commonItem("Seascape  海景", () {
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return const SeascapeShaderPage();
+              }));
+            }),
             commonItem("fractal pyramid  分形金字塔", () {
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return const FractalPyramidShaderPage();

@@ -30,7 +30,7 @@ class _ColorShaderDemoState extends State<ColorShaderDemo>  {
     return Center(
       child: TickingBuilder(builder: (context,time){
         return  CustomPaint(
-          size: const Size(400, 200),
+          size: const Size(400, 100),
           painter: ShaderPainter(  shader: shader! ,time: time),
         );
       }),
@@ -55,14 +55,14 @@ class ShaderPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    shader.setFloat(0, size.width/4);
-    shader.setFloat(1, size.height/4);
+    shader.setFloat(0, size.width / 4);
+    shader.setFloat(1, size.width / 4);
     shader.setFloat(2, time);
-    shader.setFloat(3, size.width / 3);
+    // shader.setFloat(3, size.width / 3);
 
     final paint = Paint()..shader = shader;
     canvas.drawRect(
-      Rect.fromLTWH(0, 0, size.width, size.height),
+      Rect.fromLTWH(0, 0, size.width, size.width),
       paint,
     );
   }
