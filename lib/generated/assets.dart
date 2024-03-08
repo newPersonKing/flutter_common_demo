@@ -15,6 +15,7 @@ class Assets {
   static const String fashionFashion8 = 'assets/fashion/fashion_8.jpg';
   static const String imagesBg = 'assets/images/bg.jpeg';
   static const String imagesBgLoginHeader = 'assets/images/bg_login_header.png';
+  static const String imagesColor = 'assets/images/color.webp';
   static const String imagesConcave = 'assets/images/concave.png';
   static const String imagesConvex = 'assets/images/convex.png';
   static const String imagesCreditCardChip = 'assets/images/credit_card_chip.png';
@@ -61,7 +62,9 @@ class Assets {
   static const String imagesIconUserDefault = 'assets/images/icon_user_default.png';
   static const String imagesIconWeiruan = 'assets/images/icon_weiruan.png';
   static const String imagesMap = 'assets/images/map.jpg';
+  static const String imagesPackageDeliveryTracking = 'assets/images/package_delivery_tracking.png';
   static const String imagesPinBall256x = 'assets/images/pin_ball_256x.png';
+  static const String imagesProcessTimeline = 'assets/images/process_timeline.png';
   static const String imagesRain = 'assets/images/rain.png';
   static const String imagesRegisterPerson = 'assets/images/register_person.png';
   static const String imagesRightChat = 'assets/images/right_chat.png';
@@ -70,10 +73,16 @@ class Assets {
   static const String imagesSword = 'assets/images/sword.png';
   static const String imagesTesla = 'assets/images/tesla.png';
   static const String imagesTeslaCropped = 'assets/images/tesla_cropped.png';
+  static const String imagesTimelineStatus = 'assets/images/timeline_status.png';
   static const String imagesWeeknd = 'assets/images/weeknd.jpg';
   static const String imagesWy200x300 = 'assets/images/wy_200x300.jpg';
   static const String imagesWy300x200 = 'assets/images/wy_300x200.jpg';
   static const String imgTest = 'img/test.jpeg';
+  static const String processTimelineStatus1 = 'assets/images/process_timeline/status1.png';
+  static const String processTimelineStatus2 = 'assets/images/process_timeline/status2.png';
+  static const String processTimelineStatus3 = 'assets/images/process_timeline/status3.png';
+  static const String processTimelineStatus4 = 'assets/images/process_timeline/status4.png';
+  static const String processTimelineStatus5 = 'assets/images/process_timeline/status5.png';
   static const String sample1 = 'assets/sample/1.png';
   static const String sample10 = 'assets/sample/10.png';
   static const String sample11 = 'assets/sample/11.png';
@@ -131,7 +140,5 @@ class Assets {
   static const String sampleBrowserLogos64 = 'assets/sample/browser_logos-64.png';
   static const String sampleFs = 'assets/sample/fs.png';
   static const String sampleSprites = 'assets/sample/sprites.png';
-  static const String shadersColor = 'shaders/color.frag';
-  static const String shadersFourShaderColor = 'shaders/four_shader_color.frag';
 
 }

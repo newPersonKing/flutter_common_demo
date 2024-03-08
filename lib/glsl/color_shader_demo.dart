@@ -1,10 +1,11 @@
-import 'dart:ui';
+import 'dart:typed_data';
+import 'dart:ui' as UI;
 
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_common_demo/generated/assets.dart';
 
-import '../box_decoration/flutter_neumorphic.dart';
-
+import 'package:flutter/material.dart';
 class ColorShaderDemo extends StatefulWidget {
   const ColorShaderDemo({super.key});
 
@@ -13,16 +14,27 @@ class ColorShaderDemo extends StatefulWidget {
 }
 
 class _ColorShaderDemoState extends State<ColorShaderDemo>  {
-  FragmentShader? shader;
+  UI.FragmentShader? shader;
+  UI.Image? image;
   @override
   void initState() {
     super.initState();
     _loadShader();
+    loadImageFromAssets(Assets.imagesHome1);
+  }
+
+  //读取 assets 中的图片
+  void loadImageFromAssets(String path) async {
+    ByteData data = await rootBundle.load(path);
+    image = await decodeImageFromList(data.buffer.asUint8List());
+    setState(() {
+
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (shader == null) {
+    if (shader == null || image == null) {
       return const Center(
         child: CircularProgressIndicator(),
       );
@@ -30,8 +42,8 @@ class _ColorShaderDemoState extends State<ColorShaderDemo>  {
     return Center(
       child: TickingBuilder(builder: (context,time){
         return  CustomPaint(
-          size: const Size(400, 100),
-          painter: ShaderPainter(  shader: shader! ,time: time),
+          size: const Size(double.infinity, double.infinity),
+          painter: ShaderPainter(  shader: shader! ,time: time,image: image!),
         );
       }),
     );
@@ -39,7 +51,7 @@ class _ColorShaderDemoState extends State<ColorShaderDemo>  {
 
   void _loadShader() async {
     String path = 'shaders/magic_test.glsl';
-    FragmentProgram program = await FragmentProgram.fromAsset(path);
+    UI.FragmentProgram program = await UI.FragmentProgram.fromAsset(path);
     shader = program.fragmentShader();
     setState(() {
 
@@ -49,20 +61,21 @@ class _ColorShaderDemoState extends State<ColorShaderDemo>  {
 
 class ShaderPainter extends CustomPainter {
   double time;
-  ShaderPainter({required this.shader,required this.time});
+  UI.Image image;
+  ShaderPainter({required this.shader,required this.time,required this.image});
 
-  FragmentShader shader;
+  UI.FragmentShader shader;
 
   @override
   void paint(Canvas canvas, Size size) {
-    shader.setFloat(0, size.width / 4);
-    shader.setFloat(1, size.width / 4);
+    shader.setFloat(0, 80);
+    shader.setFloat(1, 75);
     shader.setFloat(2, time);
-    // shader.setFloat(3, size.width / 3);
+    shader.setImageSampler(0, image);
 
     final paint = Paint()..shader = shader;
     canvas.drawRect(
-      Rect.fromLTWH(0, 0, size.width, size.width),
+      Rect.fromLTWH(0, 0, 300, 500),
       paint,
     );
   }

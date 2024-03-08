@@ -92,7 +92,7 @@ class DateInputFormatter extends TextInputFormatter {
       text: resultText,
       selection: TextSelection.collapsed(offset: offset),
       composing: defaultTargetPlatform == TargetPlatform.iOS
-          ? TextRange(start: 0, end: 0)
+          ? const TextRange(start: 0, end: 0)
           : TextRange.empty,
     );
   }

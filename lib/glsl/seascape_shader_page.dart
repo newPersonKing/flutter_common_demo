@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_common_demo/generated/assets.dart';
 
-import '../box_decoration/flutter_neumorphic.dart';
+import 'package:flutter/material.dart';
 
 class SeascapeShaderPage extends StatefulWidget {
   const SeascapeShaderPage({super.key});

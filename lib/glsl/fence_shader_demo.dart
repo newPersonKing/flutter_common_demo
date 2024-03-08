@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_common_demo/generated/assets.dart';
 
-import '../box_decoration/flutter_neumorphic.dart';
+import 'package:flutter/material.dart';
 
 class FenceShaderDemo extends StatefulWidget {
   const FenceShaderDemo({super.key});

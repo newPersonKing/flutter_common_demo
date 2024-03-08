@@ -4,7 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 
-import '../box_decoration/flutter_neumorphic.dart';
+import 'package:flutter/material.dart';
 
 class MagicColorPage extends StatefulWidget {
 

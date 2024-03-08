@@ -34,6 +34,40 @@ out vec4 fragColor;
 //  }
 //}
 
+//void main() {
+//  vec2 coo = FlutterFragCoord().xy / uSize;
+//  float shadowWidth = 20;
+//  float x = FlutterFragCoord().x;
+//  float y = FlutterFragCoord().y;
+//  float width = uSize[0];
+//  float height = uSize[1];
+//  if(x <= shadowWidth || x > width - shadowWidth  || y < shadowWidth || y >= height - shadowWidth){
+//    float dis = 0.0;
+//    if( x >  shadowWidth && x < (width-shadowWidth) && y < shadowWidth){
+//      dis = y;
+//    }else if(x > shadowWidth && x < ( width -shadowWidth) && y > (height - shadowWidth)){
+//      dis = height - y;
+//    }else if(y > shadowWidth && y < (height -shadowWidth) && x < shadowWidth){
+//      dis = x;
+//    }else if( y > shadowWidth && y < (height - shadowWidth) && x > (width - shadowWidth)){
+//      dis = width - x;
+//    }else if((x < shadowWidth && y < shadowWidth)){
+//      dis = min(x,y);
+//    }else if((x > ( width -shadowWidth) && y < shadowWidth)){
+//      dis = min(width - x,y);
+//    }else if (x > (width - shadowWidth) && y > height - shadowWidth){
+//      dis = min(width -  x,height - y);
+//    }else if (x < shadowWidth && y > height -shadowWidth){
+//      dis = min(x,height - y);
+//    }
+//    float alpha = 1 - (dis / shadowWidth);
+//    fragColor = vec4(0, 120, 0, 255 * alpha) / 255;
+//  }else {
+//    fragColor = vec4(0, 0, 0, 0) / 255;
+//  }
+//}
+
+//增加smoothStep
 void main() {
   vec2 coo = FlutterFragCoord().xy / uSize;
   float shadowWidth = 20;
@@ -60,7 +94,8 @@ void main() {
     }else if (x < shadowWidth && y > height -shadowWidth){
       dis = min(x,height - y);
     }
-    float alpha = 1 - (dis / shadowWidth);
+    float alpha = 1 - smoothstep(0,shadowWidth,dis);
+//    float alpha = 1 - (dis / shadowWidth);
     fragColor = vec4(0, 120, 0, 255 * alpha) / 255;
   }else {
     fragColor = vec4(0, 0, 0, 0) / 255;

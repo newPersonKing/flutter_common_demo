@@ -25,6 +25,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  base58check:
+    dependency: transitive
+    description:
+      name: base58check
+      sha256: "6c300dfc33e598d2fe26319e13f6243fea81eaf8204cb4c6b69ef20a625319a5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+  bech32:
+    dependency: transitive
+    description:
+      name: bech32
+      sha256: "156cbace936f7720c79a79d16a03efad343b1ef17106716e04b8b8e39f99f7f7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2"
   bloc:
     dependency: transitive
     description:
@@ -65,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      sha256: "0f08b14755d163f6e2134cb58222dd25ea2a2ee8a195e53983d57c075324d592"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
   crypto:
     dependency: "direct main"
     description:
@@ -97,14 +121,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.5"
-  expandable_text:
-    dependency: "direct main"
-    description:
-      name: expandable_text
-      sha256: "7d03ea48af6987b20ece232678b744862aa3250d4a71e2aaf1e4af90015d76b1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.0"
   fake_async:
     dependency: transitive
     description:
@@ -134,6 +150,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
+  flutter_inset_box_shadow:
+    dependency: "direct main"
+    description:
+      name: flutter_inset_box_shadow
+      sha256: "0b1930ed5f4ad84b11b41dda907fbc5d4c12929a4c51455c626e5937b47ffb93"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.8"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -142,6 +166,28 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  flutter_lunar_datetime_picker:
+    dependency: "direct main"
+    description:
+      path: "packages/flutter_lunar_datetime_picker"
+      relative: true
+    source: path
+    version: "1.0.5"
+  flutter_multi_formatter:
+    dependency: "direct main"
+    description:
+      path: "packages/flutter_multi_formatter"
+      relative: true
+    source: path
+    version: "2.12.4"
+  flutter_spinkit:
+    dependency: "direct main"
+    description:
+      name: flutter_spinkit
+      sha256: b39c753e909d4796906c5696a14daf33639a76e017136c8d82bf3e620ce5bb8e
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -152,6 +198,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  gap:
+    dependency: "direct main"
+    description:
+      name: gap
+      sha256: f19387d4e32f849394758b91377f9153a1b41d79513ef7668c088c77dbc6955d
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   geolocator:
     dependency: "direct main"
     description:
@@ -200,6 +254,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.2"
+  go_router:
+    dependency: "direct main"
+    description:
+      name: go_router
+      sha256: "170c46e237d6eb0e6e9f0e8b3f56101e14fb64f787016e42edd74c39cf8b176a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "13.2.0"
   http_parser:
     dependency: transitive
     description:
@@ -224,6 +286,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "623a88c9594aa774443aa3eb2d41807a48486b5613e67599fb4c41c0ad47c340"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
+  lunar:
+    dependency: transitive
+    description:
+      name: lunar
+      sha256: "342c60777030ffde70626b750bfb7e9f91a7eaa680a06edfbb9ef6b2361dbd3e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.1"
   matcher:
     dependency: transitive
     description:
@@ -431,4 +509,4 @@ packages:
     version: "3.4.4"
 sdks:
   dart: ">=3.2.0-194.0.dev <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.13.0"

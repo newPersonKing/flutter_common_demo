@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common_demo/bottom_app_bar_page.dart';
-import 'package:flutter_common_demo/box_decoration/cus/cus_decoration_home_page.dart';
-import 'package:flutter_common_demo/box_decoration/decoration_home_page.dart';
-import 'package:flutter_common_demo/box_decoration/src/theme/theme.dart';
+import 'package:flutter_common_demo/cus_widget/box_decoration/decoration_home_page.dart';
+import 'package:flutter_common_demo/cus_widget/box_decoration/src/app.dart';
+import 'package:flutter_common_demo/cus_widget/box_decoration/src/theme/theme.dart';
 import 'package:flutter_common_demo/dismissible_page/demo/demo.dart';
 import 'package:flutter_common_demo/gesture/gesture_home_page.dart';
 import 'package:flutter_common_demo/guide/guide_home_page.dart';
@@ -10,6 +10,7 @@ import 'package:flutter_common_demo/hyper_effects/hyper_effects_demo_page.dart';
 import 'package:flutter_common_demo/listview/listview_home.dart';
 import 'package:flutter_common_demo/page_route_builder/page_route_builder_home_page.dart';
 import 'package:flutter_common_demo/paint/paint_home.dart';
+import 'package:flutter_common_demo/router/go_router.dart';
 import 'package:flutter_common_demo/slivers/sliverAnimatedList_page.dart';
 import 'package:flutter_common_demo/statusbar/status_bar_page.dart';
 import 'package:flutter_common_demo/system_api/system_ui.dart';
@@ -21,12 +22,10 @@ import 'package:flutter_common_demo/textfield/TextFieldHomePage.dart';
 import 'package:flutter_common_demo/validator/validator_home_page.dart';
 import 'package:flutter_common_demo/withdrawGoldPage.dart';
 import 'FractionalTranslationPage.dart';
-import 'TestPage.dart';
-import 'box_decoration/src/app.dart';
 import 'build_widget/BuilderWidgetPage.dart';
 import 'constraints/constraints_page.dart';
+import 'cus_widget/box_decoration/cus/cus_decoration_home_page.dart';
 import 'cus_widget/custom_widget_home.dart';
-import 'decoration_blendmode/DecorationBlendModelPage.dart';
 import 'glsl/glsl_main_page.dart';
 import 'location/geolocator/geolocator_demo_page.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
@@ -109,23 +108,11 @@ class _MyHomePageState extends State<MyHomePage> {
               return  PaintHomePage();
             }));
           }),
-          commonItem("test",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const TestPage();
-            }));
-          }),
-
-          commonItem("Decoration BlendMode",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const DecorationBlendModelPage();
-            }));
-          }),
-
-          commonItem("CusDecoration Examples",(){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const CusDecorationHomePage();
-            }));
-          }),
+          // commonItem("test",(){
+          //   Navigator.push(context, MaterialPageRoute(builder: (context){
+          //     return const TestPage();
+          //   }));
+          // }),
 
           commonItem("Guide Demo",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -134,27 +121,11 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
 
 
-          commonItem("Decoration Examples",(){
+          commonItem("CusDecoration Examples",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const NeumorphicApp(
-                debugShowCheckedModeBanner: false,
-                title: 'Flutter Demo',
-                themeMode: ThemeMode.light,
-                theme: NeumorphicThemeData(
-                  baseColor: Color(0xFFFFFFFF),
-                  lightSource: LightSource.topLeft,
-                  depth: 10,
-                ),
-                darkTheme: NeumorphicThemeData(
-                  baseColor: Color(0xFF3E3E3E),
-                  lightSource: LightSource.topLeft,
-                  depth: 6,
-                ),
-                home: DecorationHomePage(),
-              );;
+              return const CusDecorationHomePage();
             }));
           }),
-
 
           commonItem("Dismissible Examples",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -269,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
           // commonItem("测试",(){
           //   Navigator.push(context, MaterialPageRoute(builder: (context){
-          //     return  ChatListScrollDemoPage2();
+          //     return  ListTestPage();
           //   }));
           // }),
           commonItem("点击展示",(){

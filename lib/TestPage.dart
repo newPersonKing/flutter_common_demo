@@ -1,82 +1,87 @@
+// Copyright 2013 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class TestPage extends StatefulWidget {
-  final String a= "";
-  const TestPage({Key? key}) : super(key: key);
+/// This sample app shows an app with two screens.
+///
+/// The first route '/' is mapped to [HomeScreen], and the second route
+/// '/details' is mapped to [DetailsScreen].
+///
+/// The buttons use context.go() to navigate to each destination. On mobile
+/// devices, each destination is deep-linkable and on the web, can be navigated
+/// to using the address bar.
+void main() => runApp(const MyApp());
 
-  @override
-  State<StatefulWidget> createState() => TestPageState();
-}
+/// The route configuration.
+final GoRouter _router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'details',
+          builder: (BuildContext context, GoRouterState state) {
+            return const DetailsScreen();
+          },
+        ),
+      ],
+    ),
+  ],
+);
 
-class TestPageState extends State<TestPage>{
-
-  List<InlineSpan> spnas = [];
-  @override
-  void initState() {
-    super.initState();
-    Timer(const Duration(seconds: 5), () {
-      debugPrint("======13132");
-      setState(() {
-        // spnas = [];
-        spnas.add(TextSpan(text: "1",style: TextStyle(
-            fontSize: 20,
-            color: Colors.green
-        )));
-        spnas.add(TextSpan(text: "2",style: TextStyle(
-            fontSize: 20,
-            color: Colors.green
-        )));
-      });
-    });
-    spnas.add(TextSpan(text: "1",style: TextStyle(
-        fontSize: 20,
-        color: Colors.green
-    )));
-  }
+/// The main app.
+class MyApp extends StatelessWidget {
+  /// Constructs a [MyApp]
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.yellow,
-      child: Column(
-        children: [
-          Container(
-            height: 100,
-            color: Colors.red,
-          ),
-          spnas.isNotEmpty ? RichText(text: TextSpan(children: spnas)):SizedBox()
-        ],
+    return MaterialApp.router(
+      routerConfig: _router,
+    );
+  }
+}
+
+/// The home screen
+class HomeScreen extends StatelessWidget {
+  /// Constructs a [HomeScreen]
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home Screen')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => context.go('/details'),
+          child: const Text('Go to the Details screen'),
+        ),
       ),
     );
   }
-
 }
 
-void main(){
-  runApp(TestPage());
-}
+/// The details screen
+class DetailsScreen extends StatelessWidget {
+  /// Constructs a [DetailsScreen]
+  const DetailsScreen({super.key});
 
-class CD extends State<StatefulWidget> with RestorationMixin {
   @override
   Widget build(BuildContext context) {
-    return Text("${_counter.value}");
+    return Scaffold(
+      appBar: AppBar(title: const Text('Details Screen')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => context.go('/'),
+          child: const Text('Go back to the Home screen'),
+        ),
+      ),
+    );
   }
-
-  final RestorableInt _counter = RestorableInt(0);
-
-  @override
-  String? get restorationId => "restorationId";
-
-  @override
-  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
-    registerForRestoration(_counter, "count");
-  }
-
 }
-
-
-
-
-
