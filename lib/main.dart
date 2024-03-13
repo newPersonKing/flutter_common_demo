@@ -3,6 +3,7 @@ import 'package:flutter_common_demo/bottom_app_bar_page.dart';
 import 'package:flutter_common_demo/cus_widget/box_decoration/decoration_home_page.dart';
 import 'package:flutter_common_demo/cus_widget/box_decoration/src/app.dart';
 import 'package:flutter_common_demo/cus_widget/box_decoration/src/theme/theme.dart';
+import 'package:flutter_common_demo/cus_widget/stack_card/stack_card_demo.dart';
 import 'package:flutter_common_demo/dismissible_page/demo/demo.dart';
 import 'package:flutter_common_demo/gesture/gesture_home_page.dart';
 import 'package:flutter_common_demo/guide/guide_home_page.dart';
@@ -26,6 +27,7 @@ import 'build_widget/BuilderWidgetPage.dart';
 import 'constraints/constraints_page.dart';
 import 'cus_widget/box_decoration/cus/cus_decoration_home_page.dart';
 import 'cus_widget/custom_widget_home.dart';
+import 'cus_widget/stack_card/stack_card_1/stack_card_1_page.dart';
 import 'glsl/glsl_main_page.dart';
 import 'location/geolocator/geolocator_demo_page.dart';
 import 'navigator_overlay/navigator_overlay_common.dart';
@@ -97,6 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          commonItem("Stack Card",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return const StackDemoPage();
+            }));
+          }),
           commonItem("GLSL 学习",(){
             Navigator.push(context, MaterialPageRoute(builder: (context){
               return const GLSLMainPage();
@@ -238,11 +245,11 @@ class _MyHomePageState extends State<MyHomePage> {
               return  const BuilderWidgetPage();
             }));
           }),
-          // commonItem("测试",(){
-          //   Navigator.push(context, MaterialPageRoute(builder: (context){
-          //     return  ListTestPage();
-          //   }));
-          // }),
+          commonItem("测试",(){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return  StackCard1Page();
+            }));
+          }),
           commonItem("点击展示",(){
             // showPay();
             Navigator.push(context, MaterialPageRoute(builder: (context){

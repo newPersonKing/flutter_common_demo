@@ -2,6 +2,8 @@
 class Assets {
   Assets._();
 
+  static const String assetsHitchhiker = 'assets/hitchhiker.png';
+  static const String assetsHitchhiker2 = 'assets/hitchhiker_2.png';
   static const String assetsMds = 'assets/mds.jpg';
   static const String assetsXyx = 'assets/xyx.webp';
   static const String fashionFashion0 = 'assets/fashion/fashion_0.jpg';
@@ -19,6 +21,7 @@ class Assets {
   static const String imagesConcave = 'assets/images/concave.png';
   static const String imagesConvex = 'assets/images/convex.png';
   static const String imagesCreditCardChip = 'assets/images/credit_card_chip.png';
+  static const String imagesDayNight = 'assets/images/day-night.png';
   static const String imagesDst = 'assets/images/dst.png';
   static const String imagesFlat = 'assets/images/flat.png';
   static const String imagesFlutter = 'assets/images/flutter.png';

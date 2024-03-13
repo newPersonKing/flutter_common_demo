@@ -51,6 +51,8 @@ dependencies:
   go_router: ^13.2.0
   flutter_inset_box_shadow: ^1.0.8
   flutter_spinkit: ^5.2.0
+  flutter_highlight: ^0.7.0
+  sprung: ^3.0.1
   flutter_multi_formatter:
     path: ./packages/flutter_multi_formatter
   gap: ^3.0.1
