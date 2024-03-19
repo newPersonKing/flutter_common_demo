@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common_demo/check/people_check.dart';
+import 'package:flutter_common_demo/cus_widget/border/border_home_page.dart';
 import 'package:flutter_common_demo/cus_widget/data_picker/date_picker_page.dart';
 import 'package:flutter_common_demo/cus_widget/progress/progress_home_page.dart';
 import 'package:flutter_common_demo/cus_widget/ruler/ruler_page.dart';
@@ -27,6 +28,11 @@ class CustomWidgetHome extends StatelessWidget {
       child: SafeArea(child: SingleChildScrollView(
         child: Column(
           children: [
+            commonItem("Border",(){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return const BorderHomePage();
+              }));
+            }),
             commonItem("Time_Line",(){
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return const TimeLinePage();
